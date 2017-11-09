@@ -1,5 +1,5 @@
 defmodule CalculatorTest do
   use ExUnit.Case
-  # doctest Calculator
+  doctest Calculator
 
 end
