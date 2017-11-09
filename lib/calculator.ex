@@ -15,6 +15,9 @@ defmodule Calculator do
       iex> Calculator.add([21,15,9])
       45
 
+      iex> Calculator.add([1,2])
+      3
+
   """
   def add([]), do: 0
   def add([h]), do: h
