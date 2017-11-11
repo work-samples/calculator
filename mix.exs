@@ -7,7 +7,18 @@ defmodule Calculator.Mixfile do
   @deps [
     { :ex_doc,  ">= 0.0.0", only: [ :dev, :test ] },
     { :mix_test_watch, "~> 0.5.0" },
+    { :coverex, "~> 1.4.10", only: :test },
   ]
+
+  @aliases [
+    "test": "test --color --stale --cover",
+  ]
+
+  @test_coverage [
+    tool: Coverex.Task,
+    console_log: false
+  ]
+
 
   # ------------------------------------------------------------
 
@@ -18,7 +29,9 @@ defmodule Calculator.Mixfile do
       version: @version,
       elixir:  ">= 1.5.2",
       deps:    @deps,
+      aliases: @aliases,
       build_embedded:  in_production,
+      test_coverage: @test_coverage,
     ]
   end
 
